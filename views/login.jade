@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form#loginForm(method = 'post', action = '/loginAct')
+      p 
+        input#username(type = 'text', name = 'username', placeholder = 'User Name')
+      p
+        input#password(type = 'text', name = 'password', placeholder = 'Password')
+      p
+        input#submitBtn(type = 'submit', name = 'submitBtn', value = 'Login')

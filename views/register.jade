@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form#regForm(method = 'post', action ='/regAct')
+      p Username: 
+        input#username(type = 'text', name = 'username', placeholder = 'User Name')
+      p Password: 
+        input#password(type = 'text', name = 'password', placeholder = 'Password')
+      p Email: 
+        input#email(type = 'text', name = 'email', placeholder = 'Email')
+      p Fullname: 
+        input#fullname(type = 'text', name = 'fullname', placeholder = 'Full Name')
+      p Date Of Birth: 
+        select(name = 'month') 
+            -for(var a=1; a<13; a++){
+                option(value=a)=a
+            -}
+        select(name = 'day') 
+            -for(var a=1; a<32; a++){
+                option(value=a)=a
+            -}
+        select(name = 'year') 
+            -for(var a=1940; a<2015; a++){
+                option(value=a)=a
+            -}
+      p Gender: 
+        select(name = 'gender')
+            option(value='male') Male
+            |   
+            option(value='female') Female
+      p Address: 
+        textarea#address(type = 'text', name = 'address', placeholder = 'Address') 
+      p
+        input#submitBtn(type = 'submit', name = 'submitBtn', value = 'Register')
+
+
