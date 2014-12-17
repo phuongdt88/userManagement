@@ -3,15 +3,19 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  form#regForm(method = 'post', action ='/regAct')
+  form#regForm(name = 'regForm', method = 'post', onsubmit = 'return validateForm()', action ='/regAct')
       p Username: 
         input#username(type = 'text', name = 'username', placeholder = 'User Name')
+        div#usernameValidate
       p Password: 
         input#password(type = 'text', name = 'password', placeholder = 'Password')
+        div#passwordValidate
       p Email: 
         input#email(type = 'text', name = 'email', placeholder = 'Email')
+        div#emailValidate
       p Fullname: 
         input#fullname(type = 'text', name = 'fullname', placeholder = 'Full Name')
+        div#fullnameValidate
       p Date Of Birth: 
         select(name = 'month') 
             -for(var a=1; a<13; a++){
@@ -31,7 +35,8 @@ block content
             |   
             option(value='female') Female
       p Address: 
-        textarea#address(type = 'text', name = 'address', placeholder = 'Address') 
+        textarea#address(type = 'text', name = 'address', placeholder = 'Address')
+        div#addressValidate
       p
         input#submitBtn(type = 'submit', name = 'submitBtn', value = 'Register')
 
