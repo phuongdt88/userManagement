@@ -73,4 +73,10 @@ router.post('/loginAct', function(req, res){
     });
 });
 
+router.get('/upload', function(req, res){
+    res.render('upload', {
+        title: 'Upload page'
+    });
+});
+
 module.exports = router;

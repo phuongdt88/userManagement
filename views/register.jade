@@ -4,40 +4,41 @@ block content
   h1= title
   p Welcome to #{title}
   form#regForm(name = 'regForm', method = 'post', onsubmit = 'return validateForm()', action ='/regAct')
-      p Username: 
-        input#username(type = 'text', name = 'username', placeholder = 'User Name')
-        div#usernameValidate
-      p Password: 
-        input#password(type = 'text', name = 'password', placeholder = 'Password')
-        div#passwordValidate
-      p Email: 
-        input#email(type = 'text', name = 'email', placeholder = 'Email')
-        div#emailValidate
-      p Fullname: 
-        input#fullname(type = 'text', name = 'fullname', placeholder = 'Full Name')
-        div#fullnameValidate
-      p Date Of Birth: 
-        select(name = 'month') 
-            -for(var a=1; a<13; a++){
-                option(value=a)=a
-            -}
-        select(name = 'day') 
-            -for(var a=1; a<32; a++){
-                option(value=a)=a
-            -}
-        select(name = 'year') 
-            -for(var a=1940; a<2015; a++){
-                option(value=a)=a
-            -}
-      p Gender: 
-        select(name = 'gender')
-            option(value='male') Male
-            |   
-            option(value='female') Female
-      p Address: 
-        textarea#address(type = 'text', name = 'address', placeholder = 'Address')
-        div#addressValidate
-      p
-        input#submitBtn(type = 'submit', name = 'submitBtn', value = 'Register')
+      div.regFields 
+        div.username Username: 
+            input#username(type = 'text', name = 'username', placeholder = 'User Name')
+            div#usernameValidate
+        div.password Password: 
+            input#password(type = 'password', name = 'password', placeholder = 'Password')
+            div#passwordValidate
+        div.email Email: 
+            input#email(type = 'text', name = 'email', placeholder = 'Email')
+            div#emailValidate
+        div.fullname Fullname: 
+            input#fullname(type = 'text', name = 'fullname', placeholder = 'Full Name')
+            div#fullnameValidate
+        div.dob Date Of Birth: 
+            select#month(name = 'month') 
+                -for(var a=1; a<13; a++){
+                    option(value=a)=a
+                -}
+            select#day(name = 'day') 
+                -for(var a=1; a<32; a++){
+                    option(value=a)=a
+                -}
+            select#year(name = 'year') 
+                -for(var a=1940; a<2015; a++){
+                    option(value=a)=a
+                -}
+        div.gender Gender: 
+            select#gender(name = 'gender')
+                option(value='male') Male
+                |   
+                option(value='female') Female
+        div.address Address: 
+            textarea#address(type = 'text', name = 'address', placeholder = 'Address')
+            div#addressValidate
+        div.submit
+            input#submitBtn(type = 'submit', name = 'submitBtn', value = 'Register')
 
 
